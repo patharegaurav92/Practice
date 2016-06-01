@@ -1,0 +1,6 @@
+<table >
+    <tr><th>Name</th><th>Emp</th></tr>
+    <tr ng-repeat="person in people">
+        <td> <a href="#/view/{{$index}}">{{person.firstName}}</a></td><td>{{person.employeeNumber}}</td>
+    </tr>
+</table>
