@@ -35,9 +35,14 @@ app.controller('noteController',['$http','$scope',function($http,$scope){
     
     
     $scope.addNote=function(noteheading,notedescription){
+       var d = new Date();
+       d.format("mm/dd/yy H:MM TT");
+       
+       
         $scope.note={};
         $scope.note.noteheading=noteheading;
         $scope.note.notedescription=notedescription;
+        $scope.note.date=d.toDateString();;
         console.log($scope.note);
         
         $http.post('/addnotes',$scope.note).success(function(response){
